@@ -1,17 +1,13 @@
-import BuiltWithButton from "@/components/BuiltWithButton";
-import { Newsletter } from "@/components/footer/Newsletter";
 import { TwitterX } from "@/components/social-icons/icons";
 import { siteConfig } from "@/config/site";
 import { Link as I18nLink } from "@/i18n/routing";
 import { FooterLink } from "@/types/common";
 import { GithubIcon, MailIcon } from "lucide-react";
-import { getMessages, getTranslations } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { SiBluesky, SiDiscord } from "react-icons/si";
 
 export default async function Footer() {
-  const messages = await getMessages();
-
   const t = await getTranslations("Home");
   const tFooter = await getTranslations("Footer");
 
@@ -27,7 +23,7 @@ export default async function Footer() {
     <div className="bg-gray-900 text-gray-300">
       <footer className="py-2 border-t border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 py-12 lg:grid-cols-6">
+          <div className="grid grid-cols-1 gap-8 py-12 sm:grid-cols-2 lg:grid-cols-5">
             <div className="w-full flex flex-col sm:flex-row lg:flex-col gap-4 col-span-full md:col-span-2">
               <div className="space-y-4 flex-1">
                 <div className="items-center space-x-2 flex">
@@ -36,7 +32,7 @@ export default async function Footer() {
                   </h2>
                 </div>
 
-                <p className="text-sm p4-4 md:pr-12">{t("tagLine")}</p>
+                <p className="text-sm md:pr-12">{t("tagLine")}</p>
 
                 <div className="flex items-center gap-2">
                   {siteConfig.socialLinks?.github && (
@@ -105,8 +101,6 @@ export default async function Footer() {
                     </Link>
                   )}
                 </div>
-
-                <BuiltWithButton />
               </div>
             </div>
 
@@ -118,7 +112,18 @@ export default async function Footer() {
                 <ul className="space-y-2 text-sm">
                   {section.links.map((link) => (
                     <li key={link.href}>
-                      {link.href.startsWith("/") && !link.useA ? (
+                      {link.href.includes("#") ? (
+                        <Link
+                          href={link.href}
+                          title={link.name}
+                          prefetch={false}
+                          className="hover:text-white transition-colors"
+                          target={link.target || ""}
+                          rel={link.rel || ""}
+                        >
+                          {link.name}
+                        </Link>
+                      ) : link.href.startsWith("/") && !link.useA ? (
                         <I18nLink
                           href={link.href}
                           title={link.name}
@@ -147,11 +152,6 @@ export default async function Footer() {
               </div>
             ))}
 
-            {messages.Footer.Newsletter && (
-              <div className="w-full flex-1">
-                <Newsletter />
-              </div>
-            )}
           </div>
 
           <div className="border-t border-gray-800 py-6 flex flex-col md:flex-row justify-between items-center">

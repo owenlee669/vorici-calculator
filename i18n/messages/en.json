@@ -8,29 +8,21 @@
   "Header": {
     "links": [
       {
-        "name": "Blog",
-        "href": "/blog"
+        "name": "Examples",
+        "href": "/#examples"
       },
       {
-        "name": "About",
-        "href": "/about"
+        "name": "How It Works",
+        "href": "/#how-it-works"
       },
       {
-        "name": "Source Code",
-        "href": "https://github.com/weijunext/nextjs-starter",
-        "target": "_blank",
-        "rel": "noopener noreferrer nofollow"
-      },
-      {
-        "name": "Pro Version",
-        "href": "https://nexty.dev",
-        "target": "_blank",
-        "rel": "noopener noreferrer"
+        "name": "FAQ",
+        "href": "/#faq"
       }
     ]
   },
   "Footer": {
-    "Copyright": "Copyright © {year} {name} All rights reserved.",
+    "Copyright": "Copyright {year} {name}. All rights reserved.",
     "PrivacyPolicy": "Privacy Policy",
     "TermsOfService": "Terms of Service",
     "Links": {
@@ -45,74 +37,64 @@
             },
             {
               "href": "/zh",
-              "name": "中文",
+              "name": "Chinese",
               "useA": true
             },
             {
               "href": "/ja",
-              "name": "日本語",
+              "name": "Japanese",
               "useA": true
             }
           ]
         },
         {
-          "title": "Open Source",
+          "title": "Site",
           "links": [
             {
-              "href": "https://github.com/weijunext/nextjs-starter",
-              "name": "Next.js Starter",
-              "rel": "noopener noreferrer nofollow",
-              "target": "_blank"
+              "href": "/#examples",
+              "name": "Examples"
             },
             {
-              "href": "https://github.com/weijunext/landing-page-boilerplate",
-              "name": "Landing Page Boilerplate",
-              "rel": "noopener noreferrer nofollow",
-              "target": "_blank"
+              "href": "/#how-it-works",
+              "name": "How It Works"
             },
             {
-              "href": "https://github.com/weijunext/weekly-boilerplate",
-              "name": "Blog Boilerplate",
-              "rel": "noopener noreferrer nofollow",
-              "target": "_blank"
+              "href": "/#faq",
+              "name": "FAQ"
             }
           ]
         },
         {
-          "title": "Other Products",
+          "title": "More Tools",
           "links": [
             {
-              "href": "https://nexty.dev/",
-              "name": "Nexty - SaaS Template",
-              "rel": "noopener noreferrer",
-              "target": "_blank"
+              "href": "/#coming-soon",
+              "name": "Chromatic Calculator"
             },
             {
-              "href": "https://myogimage.com/",
-              "name": "OG Image Generator",
-              "rel": "noopener noreferrer",
-              "target": "_blank"
+              "href": "/#coming-soon",
+              "name": "Socket Coloring Guide"
             }
           ]
         }
       ]
     },
     "Newsletter": {
-      "title": "Subscribe to our newsletter",
-      "description": "Get the latest news and updates from Next.js Starter",
+      "title": "Get product updates",
+      "description": "We will use this area for future release notes and new Path of Exile tools.",
       "defaultErrorMessage": "Please enter a valid email address",
       "successMessage": "Subscription successful",
       "errorMessage": "Subscription failed",
       "errorMessage2": "Subscription failed. Please try again later.",
       "subscribe": "Subscribe",
       "subscribing": "Subscribing...",
-      "subscribed": "Subscription successful! Thank you for your attention."
+      "subscribed": "Subscription successful. Thank you."
     }
   },
   "Home": {
-    "title": "Next.js Starter",
-    "tagLine": "Multilingual Next.js 16 Starter",
-    "description": "A multilingual Next.js 16 starter with built-in i18n support. Launch your global-ready web application with a clean, efficient, and SEO-friendly foundation."
+    "title": "Vorici Calculator",
+    "tagLine": "POE Socket Color Calculator",
+    "description": "Calculate socket color odds, compare coloring approaches, and plan the cheapest Path of Exile recolor for your gear."
   },
   "Blog": {
     "title": "Blog Posts",
@@ -132,7 +114,7 @@
   },
   "Showcase": {
     "title": "Built with This Starter",
-    "description": "Discover amazing products and websites built using this Next.js starter template.",
+    "description": "Discover products and websites built using this starter template.",
     "visitSite": "Visit site"
   },
   "Submission": {
@@ -144,7 +126,7 @@
     "productUrlLabel": "Product URL",
     "submit": "Submit Product",
     "submitting": "Submitting...",
-    "successMessage": "Thank you! Your submission has been received. We'll review it shortly.",
+    "successMessage": "Thank you. Your submission has been received.",
     "errorMessage": "Something went wrong. Please try again."
   }
 }

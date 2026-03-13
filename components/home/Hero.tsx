@@ -1,72 +1,28 @@
-import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/config/site";
-import { MousePointerClick } from "lucide-react";
-import { useTranslations } from "next-intl";
-import Link from "next/link";
-import { SiDiscord } from "react-icons/si";
+import CalculatorPanel from "@/components/home/CalculatorPanel";
 
 export default function Hero() {
-  const t = useTranslations("Home");
-
   return (
-    <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16 pt-24 text-center">
-      <h1 className="mx-auto max-w-4xl font-display text-5xl font-bold tracking-tight text-slate-900 sm:text-7xl dark:text-gray-200">
-        Next.js{" "}
-        <span className="relative whitespace-nowrap text-blue-600">
-          <svg
-            aria-hidden="true"
-            viewBox="0 0 418 42"
-            className="absolute left-0 top-2/3 h-[0.58em] w-full fill-blue-300/70"
-            preserveAspectRatio="none"
-          >
-            <path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z"></path>
-          </svg>
-          <span className="relative"> i18n </span>{" "}
-        </span>
-        Starter
-      </h1>
-      <p className="mx-auto mt-6 max-w-2xl text-2xl tracking-tight text-slate-700 dark:text-slate-500">
-        {t("description")}
-      </p>
+    <section className="relative overflow-hidden">
+      <div className="absolute inset-x-0 top-0 -z-10 h-[520px] bg-[radial-gradient(circle_at_top_left,_rgba(251,191,36,0.22),_transparent_34%),radial-gradient(circle_at_top_right,_rgba(190,24,93,0.14),_transparent_30%),linear-gradient(180deg,_rgba(245,158,11,0.08),_rgba(248,245,239,0))] dark:bg-[radial-gradient(circle_at_top_left,_rgba(251,191,36,0.14),_transparent_34%),radial-gradient(circle_at_top_right,_rgba(251,113,133,0.12),_transparent_30%),linear-gradient(180deg,_rgba(148,163,184,0.08),_rgba(2,6,23,0))]" />
+      <div className="mx-auto flex w-full max-w-7xl flex-col gap-12 px-4 pb-20 pt-14 sm:px-6 lg:px-8 lg:pt-20">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-amber-700 dark:text-amber-400">
+            Path of Exile Utility
+          </p>
+          <h1 className="mt-5 max-w-4xl text-5xl font-semibold tracking-tight text-stone-900 dark:text-white sm:text-6xl lg:text-7xl">
+            Vorici Calculator
+          </h1>
+          <p className="mt-6 max-w-2xl text-xl leading-8 text-stone-700 dark:text-slate-300">
+            Find the cheapest way to roll socket colors in Path of Exile.
+            Estimate your chromatic odds, see how hostile an item base is, and
+            plan harder off-colors without guessing.
+          </p>
+          <p className="mt-5 text-sm font-medium uppercase tracking-[0.2em] text-stone-500 dark:text-slate-400">
+            One focused tool page. One keyword. One place to start coloring gear.
+          </p>
+        </div>
 
-      <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-2">
-        <Button
-          className="h-11 w-full sm:w-fit rounded-xl px-8 py-2 bg-white text-indigo-500 hover:text-indigo-600 border-2 border-indigo-500"
-          variant="outline"
-          asChild
-        >
-          <Link
-            href="https://nexty.dev/"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Get SaaS Version - NEXTY.DEV"
-            prefetch={false}
-            className="flex items-center gap-2"
-          >
-            <MousePointerClick className="w-4 h-4 text-indigo-500" />
-            Get SaaS Version
-          </Link>
-        </Button>
-        <Button
-          className="h-11 w-full sm:w-fit rounded-xl px-8 py-2 bg-white text-indigo-500 hover:text-indigo-600 border-2 border-indigo-500"
-          variant="outline"
-          asChild
-        >
-          <Link
-            href={
-              siteConfig.socialLinks?.discord ||
-              "https://discord.com/invite/R7bUxWKRqZ"
-            }
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-            title="Join Discord"
-            prefetch={false}
-            className="flex items-center gap-2"
-          >
-            <SiDiscord className="w-4 h-4 text-indigo-500" />
-            Join Discord
-          </Link>
-        </Button>
+        <CalculatorPanel />
       </div>
     </section>
   );

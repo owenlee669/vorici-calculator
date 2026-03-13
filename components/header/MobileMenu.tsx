@@ -16,6 +16,7 @@ import { HeaderLink } from "@/types/common";
 import { Menu } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function MobileMenu() {
   const t = useTranslations("Home");
@@ -53,17 +54,23 @@ export default function MobileMenu() {
           <DropdownMenuGroup>
             {headerLinks.map((link) => (
               <DropdownMenuItem key={link.name}>
-                <I18nLink
-                  href={link.href}
-                  title={link.name}
-                  prefetch={
-                    link.target && link.target === "_blank" ? false : true
-                  }
-                  target={link.target || "_self"}
-                  rel={link.rel || undefined}
-                >
-                  {link.name}
-                </I18nLink>
+                {link.href.includes("#") ? (
+                  <Link href={link.href} title={link.name} prefetch={false}>
+                    {link.name}
+                  </Link>
+                ) : (
+                  <I18nLink
+                    href={link.href}
+                    title={link.name}
+                    prefetch={
+                      link.target && link.target === "_blank" ? false : true
+                    }
+                    target={link.target || "_self"}
+                    rel={link.rel || undefined}
+                  >
+                    {link.name}
+                  </I18nLink>
+                )}
               </DropdownMenuItem>
             ))}
           </DropdownMenuGroup>
