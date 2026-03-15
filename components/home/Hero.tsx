@@ -13,12 +13,14 @@ export default function Hero() {
             Vorici Calculator
           </h1>
           <p className="mt-6 max-w-2xl text-xl leading-8 text-stone-700 dark:text-slate-300">
-            Find the cheapest way to roll socket colors in Path of Exile.
-            Estimate your chromatic odds, see how hostile an item base is, and
-            plan harder off-colors without guessing.
+            Vorici Calculator helps you find the cheapest way to roll socket
+            colors in Path of Exile. Use this Vorici Calculator to estimate
+            chromatic odds, see how hostile an item base is, and plan harder
+            off-colors without guessing.
           </p>
           <p className="mt-5 text-sm font-medium uppercase tracking-[0.2em] text-stone-500 dark:text-slate-400">
-            One focused tool page. One keyword. One place to start coloring gear.
+            One Vorici Calculator page. One keyword. One place to start
+            coloring gear.
           </p>
         </div>
 

@@ -1,12 +1,16 @@
 import { createNavigation } from "next-intl/navigation";
 import { defineRouting } from "next-intl/routing";
 
-export const LOCALES = ["en", "zh", "ja"];
+export const LOCALES = [
+  "en",
+  // "zh",
+  // "ja",
+] as const;
 export const DEFAULT_LOCALE = "en";
 export const LOCALE_NAMES: Record<string, string> = {
   en: "English",
-  zh: "Chinese",
-  ja: "Japanese",
+  // zh: "Chinese",
+  // ja: "Japanese",
 };
 
 export const routing = defineRouting({

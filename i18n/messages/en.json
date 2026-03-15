@@ -34,16 +34,6 @@
               "href": "/en",
               "name": "English",
               "useA": true
-            },
-            {
-              "href": "/zh",
-              "name": "Chinese",
-              "useA": true
-            },
-            {
-              "href": "/ja",
-              "name": "Japanese",
-              "useA": true
             }
           ]
         },
@@ -94,7 +84,7 @@
   "Home": {
     "title": "Vorici Calculator",
     "tagLine": "POE Socket Color Calculator",
-    "description": "Calculate socket color odds, compare coloring approaches, and plan the cheapest Path of Exile recolor for your gear."
+    "description": "Vorici Calculator helps you calculate socket color odds, compare coloring approaches, and plan the cheapest Path of Exile recolor for your gear."
   },
   "Blog": {
     "title": "Blog Posts",

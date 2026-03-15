@@ -21,6 +21,10 @@ import { useParams } from "next/navigation";
 import { useEffect, useState, useTransition } from "react";
 
 export default function LocaleSwitcher() {
+  if (routing.locales.length <= 1) {
+    return null;
+  }
+
   const router = useRouter();
   const pathname = usePathname();
   const params = useParams();

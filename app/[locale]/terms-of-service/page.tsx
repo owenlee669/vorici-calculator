@@ -50,6 +50,7 @@ export async function generateMetadata({
     page: "TermsOfService",
     title: t("title"),
     description: t("description"),
+    noIndex: true,
     locale: locale as Locale,
     path: `/terms-of-service`,
     canonicalUrl: `/terms-of-service`,

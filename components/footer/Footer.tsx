@@ -1,6 +1,6 @@
 import { TwitterX } from "@/components/social-icons/icons";
 import { siteConfig } from "@/config/site";
-import { Link as I18nLink } from "@/i18n/routing";
+import { Link as I18nLink, routing } from "@/i18n/routing";
 import { FooterLink } from "@/types/common";
 import { GithubIcon, MailIcon } from "lucide-react";
 import { getTranslations } from "next-intl/server";
@@ -17,6 +17,9 @@ export default async function Footer() {
     if (pricingLink) {
       pricingLink.href = process.env.NEXT_PUBLIC_PRICING_PATH!;
     }
+  });
+  const visibleFooterLinks = footerLinks.filter((group) => {
+    return !(group.title === "Languages" && routing.locales.length <= 1);
   });
 
   return (
@@ -104,14 +107,14 @@ export default async function Footer() {
               </div>
             </div>
 
-            {footerLinks.map((section) => (
+            {visibleFooterLinks.map((section) => (
               <div key={section.title} className="flex-1">
                 <h3 className="text-white text-lg font-semibold mb-4">
                   {section.title}
                 </h3>
                 <ul className="space-y-2 text-sm">
-                  {section.links.map((link) => (
-                    <li key={link.href}>
+                  {section.links.map((link, index) => (
+                    <li key={`${section.title}-${link.href}-${link.name}-${index}`}>
                       {link.href.includes("#") ? (
                         <Link
                           href={link.href}

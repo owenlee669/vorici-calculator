@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Hero from "@/components/home/Hero";
 import SectionHeading from "@/components/home/SectionHeading";
 import {
@@ -5,8 +6,10 @@ import {
   comingSoonCards,
   exampleCards,
   faqItems,
+  featurePillars,
   howItWorksPoints,
   howToUseSteps,
+  taintedChromaticPoints,
 } from "@/components/home/content";
 
 export default function HomeComponent() {
@@ -58,8 +61,8 @@ export default function HomeComponent() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Result Library"
-            title="Popular socket coloring examples"
-            description="This section plays the role of a V2-style result gallery. Instead of fake UGC, it surfaces high-frequency coloring scenarios that help visitors compare patterns before they start experimenting."
+            title="Popular Vorici Calculator examples"
+            description="This section plays the role of a V2-style result gallery. Instead of fake UGC, it surfaces high-frequency coloring scenarios that help visitors compare patterns before they start experimenting with the Vorici Calculator."
           />
 
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
@@ -94,8 +97,8 @@ export default function HomeComponent() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="How It Works"
-            title="Built like a landing page, used like a tool"
-            description="The page follows the V2.0 structure from the Web.Cafe notes: first-screen utility, a real explanation layer for SEO, and result-oriented blocks that keep users exploring the same URL."
+            title="How the Vorici Calculator works"
+            description="The page follows the V2.0 structure from the Web.Cafe notes: first-screen utility, a real explanation layer for SEO, and result-oriented blocks that keep users exploring the same Vorici Calculator URL."
           />
 
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
@@ -113,6 +116,30 @@ export default function HomeComponent() {
               </div>
             ))}
           </div>
+
+          <p className="mt-8 max-w-4xl text-base leading-8 text-stone-600 dark:text-slate-300">
+            The probability model used here follows long-running community
+            research rather than a black-box guess. If you want the historical
+            baseline, review the{" "}
+            <Link
+              href="https://github.com/Siveran/siveran.github.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-amber-700 underline-offset-4 hover:underline dark:text-amber-400"
+            >
+              Siveran calculator source
+            </Link>{" "}
+            and the{" "}
+            <Link
+              href="https://www.pathofexile.com/forum/view-thread/761831/page/1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-amber-700 underline-offset-4 hover:underline dark:text-amber-400"
+            >
+              original Chromatic Orb probability spreadsheet
+            </Link>
+            .
+          </p>
         </div>
       </section>
 
@@ -123,7 +150,7 @@ export default function HomeComponent() {
               <SectionHeading
                 eyebrow="Use Flow"
                 title="How to use the Vorici Calculator"
-                description="Keep the path short. The point of this page is to reduce exploration time, not force users through a blog post before they can start."
+                description="Keep the path short. The point of the Vorici Calculator page is to reduce exploration time, not force users through a blog post before they can start."
               />
               <ol className="mt-10 grid gap-4">
                 {howToUseSteps.map((step, index) => (
@@ -145,8 +172,8 @@ export default function HomeComponent() {
             <div>
               <SectionHeading
                 eyebrow="Method Choice"
-                title="Bench craft vs Chromatic spam"
-                description="Visitors do not just want a probability table. They want to know what to do with it. This comparison section gives the page a conversion argument, not only an SEO paragraph."
+                title="Vorici Calculator bench craft vs Chromatic spam"
+                description="Visitors do not just want a probability table. They want to know what to do with it. This comparison section gives the Vorici Calculator page a conversion argument, not only an SEO paragraph."
               />
               <div className="mt-10 grid gap-4">
                 {benchVsChromatic.map((column) => (
@@ -178,24 +205,63 @@ export default function HomeComponent() {
       <section className="w-full py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
+            eyebrow="Product Layer"
+            title="How the Vorici Calculator can improve without hurting SEO"
+            description="The source plans are directionally right about one thing: Vorici Calculator should become a decision tool, not stay a bare probability widget. The homepage can absorb the highest-value product cues while keeping keyword intent focused."
+          />
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {featurePillars.map((pillar) => (
+              <div
+                key={pillar.title}
+                className="rounded-3xl border border-stone-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-950"
+              >
+                <h3 className="text-2xl font-semibold text-stone-900 dark:text-white">
+                  {pillar.title}
+                </h3>
+                <p className="mt-3 text-base leading-7 text-stone-600 dark:text-slate-300">
+                  {pillar.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
             eyebrow="Off-Color Guide"
-            title="Where the Jeweller's Method fits"
-            description="The Web.Cafe notes stress that a strong tool page should also educate enough to improve user trust and time on page. This section explains the main companion tactic without turning the page into a bloated article."
+            title="Where the Jeweller's Method fits in Vorici Calculator"
+            description="The Web.Cafe notes stress that a strong Vorici Calculator page should also educate enough to improve user trust and time on page. This section explains the main companion tactic without turning the page into a bloated article."
           />
 
           <div className="mt-12 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
             <div className="rounded-[2rem] border border-stone-200 bg-white p-8 dark:border-slate-800 dark:bg-slate-950">
               <p className="text-lg leading-8 text-stone-700 dark:text-slate-300">
                 The Jeweller&apos;s Method is useful when you need hard off-colors
-                on an attribute-heavy base. Instead of brute forcing every socket
-                at once, you keep the useful colors you already have and reroll
-                the newest socket as you move up and down the socket count.
+                on an attribute-heavy base. In Vorici Calculator terms, this is
+                the staged path where you avoid brute forcing every socket at
+                once, keep the useful colors you already have, and reroll the
+                newest socket as you move up and down the socket count.
               </p>
               <p className="mt-6 text-lg leading-8 text-stone-700 dark:text-slate-300">
                 In practice, this matters most when an item strongly favors one
                 color but your build needs the opposite. It is the clearest
-                example of why a raw probability estimate is helpful but not
-                always the whole plan.
+                example of why a raw probability estimate is useful but not
+                always the whole plan by itself.
+              </p>
+              <p className="mt-6 text-base leading-8 text-stone-600 dark:text-slate-300">
+                For the underlying currency rule behind socket cycling, the{" "}
+                <Link
+                  href="https://www.poewiki.net/wiki/Jeweller%27s_Orb"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-amber-700 underline-offset-4 hover:underline dark:text-amber-400"
+                >
+                  PoE Wiki entry for Jeweller&apos;s Orb
+                </Link>{" "}
+                is the cleanest reference point before you compare method cost.
               </p>
             </div>
 
@@ -220,6 +286,32 @@ export default function HomeComponent() {
         </div>
       </section>
 
+      <section className="w-full bg-stone-100/80 py-20 dark:bg-slate-900/60">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12">
+            <div>
+              <SectionHeading
+                eyebrow="Corrupted Gear"
+                title="Tainted Chromatic deserves its own content lane"
+                description="Corrupted recoloring belongs on its own future page because the decision model is different from normal socket coloring and does not need to dominate the homepage."
+              />
+              <div className="mt-8 grid gap-4">
+                {taintedChromaticPoints.map((point) => (
+                  <div
+                    key={point}
+                    className="rounded-3xl border border-stone-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-950"
+                  >
+                    <p className="text-base leading-7 text-stone-700 dark:text-slate-300">
+                      {point}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section
         id="faq"
         className="w-full bg-stone-100/80 py-20 dark:bg-slate-900/60"
@@ -228,7 +320,7 @@ export default function HomeComponent() {
           <SectionHeading
             eyebrow="FAQ"
             title="Vorici Calculator FAQ"
-            description="These answers support both user clarity and structured search understanding without forcing the page into keyword stuffing."
+            description="These answers support both user clarity and structured search understanding while keeping the homepage centered on the Vorici Calculator query."
           />
 
           <div className="mt-12 grid gap-4">
@@ -252,12 +344,12 @@ export default function HomeComponent() {
       <section id="coming-soon" className="w-full py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            eyebrow="Expansion Path"
-            title="More Path of Exile tools coming next"
-            description="The page is intentionally single-purpose today, but the architecture leaves room for a wider POE tools hub once this keyword is established."
+            eyebrow="Related Guides"
+            title="Two follow-up guides make the most sense"
+            description="If the homepage performs, the next buildout should stay close to the same user intent: hard off-colors and corrupted recolors."
           />
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
             {comingSoonCards.map((card) => (
               <div
                 key={card.title}

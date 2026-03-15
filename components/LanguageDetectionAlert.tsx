@@ -9,6 +9,10 @@ import { useLocale } from "next-intl";
 import { useCallback, useEffect, useState } from "react";
 
 export function LanguageDetectionAlert() {
+  if (routing.locales.length <= 1) {
+    return null;
+  }
+
   const [countdown, setCountdown] = useState(10); // countdown 10s and dismiss
   const [isVisible, setIsVisible] = useState(false);
   const locale = useLocale();

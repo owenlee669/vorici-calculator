@@ -47,6 +47,7 @@ export async function generateMetadata({
     title: post.title,
     description: post.description,
     images: post.image ? [post.image] : [],
+    noIndex: true,
     locale: locale as Locale,
     path: `/blog/${slug}`,
     canonicalUrl: `/blog/${slug}`,

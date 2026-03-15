@@ -21,6 +21,7 @@ export async function generateMetadata({
     page: "Blog",
     title: t("title"),
     description: t("description"),
+    noIndex: true,
     locale: locale as Locale,
     path: `/blog`,
     canonicalUrl: `/blog`,
