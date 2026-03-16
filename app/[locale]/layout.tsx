@@ -73,7 +73,15 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale || DEFAULT_LOCALE} suppressHydrationWarning>
-      <head />
+      <head>
+        {process.env.NODE_ENV === "production" && (
+          <script
+            defer
+            src="https://umami.jinbai.online/script.js"
+            data-website-id="57ca4af9-79b0-45b5-81c1-3bb3bb63f468"
+          />
+        )}
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background flex flex-col font-sans antialiased"
