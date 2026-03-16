@@ -4,11 +4,8 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // 只在生产构建时使用静态导出
-  ...(process.env.NODE_ENV === 'production' && {
-    output: 'export',
-    distDir: 'dist',
-  }),
+  output: 'export',
+  distDir: 'dist',
   images: {
     unoptimized: true,
   },
