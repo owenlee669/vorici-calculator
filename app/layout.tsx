@@ -1,6 +1,7 @@
 import BaiDuAnalytics from "@/app/BaiDuAnalytics";
 import GoogleAdsense from "@/app/GoogleAdsense";
 import GoogleAnalytics from "@/app/GoogleAnalytics";
+import MicrosoftClarity from "@/app/MicrosoftClarity";
 import PlausibleAnalytics from "@/app/PlausibleAnalytics";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
@@ -73,6 +74,7 @@ export default async function RootLayout({
             <Analytics />
             <BaiDuAnalytics />
             <GoogleAnalytics />
+            <MicrosoftClarity />
             <GoogleAdsense />
             <PlausibleAnalytics />
           </>
