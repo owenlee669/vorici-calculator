@@ -7,43 +7,23 @@ import Header from "@/components/header/Header";
 import { LanguageDetectionAlert } from "@/components/LanguageDetectionAlert";
 import { TailwindIndicator } from "@/components/TailwindIndicator";
 import { siteConfig } from "@/config/site";
-import { DEFAULT_LOCALE, LOCALES, Locale, routing } from '@/i18n/routing';
-
-export function generateStaticParams() {
-  return LOCALES.map((locale) => ({ locale }));
-}
+import { DEFAULT_LOCALE } from "@/i18n/routing";
 import { constructMetadata } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import "@/styles/loading.css";
 import { Analytics } from "@vercel/analytics/react";
 import { Metadata, Viewport } from "next";
-import { hasLocale, NextIntlClientProvider } from "next-intl";
-import {
-  getMessages,
-  getTranslations,
-  setRequestLocale,
-} from "next-intl/server";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
-import { notFound } from "next/navigation";
 
-type MetadataProps = {
-  params: Promise<{ locale: string }>;
-};
-
-export async function generateMetadata({
-  params,
-}: MetadataProps): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "Home" });
-
+export async function generateMetadata(): Promise<Metadata> {
   return constructMetadata({
     page: "Home",
-    title: t("title"),
-    description: t("description"),
-    locale: locale as Locale,
-    path: `/`,
-    canonicalUrl: `/`,
+    locale: DEFAULT_LOCALE,
+    path: "/",
+    canonicalUrl: "/",
   });
 }
 
@@ -51,28 +31,16 @@ export const viewport: Viewport = {
   themeColor: siteConfig.themeColors,
 };
 
-export default async function LocaleLayout({
+export default async function RootLayout({
   children,
-  params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
-
-  // Ensure that the incoming `locale` is valid
-  if (!hasLocale(routing.locales, locale)) {
-    notFound();
-  }
-
-  setRequestLocale(locale);
-
-  // Providing all messages to the client
-  // side is the easiest way to get started
+  setRequestLocale(DEFAULT_LOCALE);
   const messages = await getMessages();
 
   return (
-    <html lang={locale || DEFAULT_LOCALE} suppressHydrationWarning>
+    <html lang={DEFAULT_LOCALE} suppressHydrationWarning>
       <head>
         {process.env.NODE_ENV === "production" && (
           <script
@@ -95,18 +63,12 @@ export default async function LocaleLayout({
           >
             {messages.LanguageDetection && <LanguageDetectionAlert />}
             {messages.Header && <Header />}
-
-            <main className="flex-1 flex flex-col items-center">
-              {children}
-            </main>
-
+            <main className="flex-1 flex flex-col items-center">{children}</main>
             {messages.Footer && <Footer />}
           </ThemeProvider>
         </NextIntlClientProvider>
         <TailwindIndicator />
-        {process.env.NODE_ENV === "development" ? (
-          <></>
-        ) : (
+        {process.env.NODE_ENV === "development" ? null : (
           <>
             <Analytics />
             <BaiDuAnalytics />

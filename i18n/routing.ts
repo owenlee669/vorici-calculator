@@ -17,7 +17,7 @@ export const routing = defineRouting({
   locales: LOCALES,
   defaultLocale: DEFAULT_LOCALE,
   localeDetection: process.env.NEXT_PUBLIC_LOCALE_DETECTION === "true",
-  localePrefix: "as-needed",
+  localePrefix: "never",
 });
 
 export const { Link, redirect, usePathname, useRouter, getPathname } =
