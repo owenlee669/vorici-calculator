@@ -7,7 +7,11 @@ import Header from "@/components/header/Header";
 import { LanguageDetectionAlert } from "@/components/LanguageDetectionAlert";
 import { TailwindIndicator } from "@/components/TailwindIndicator";
 import { siteConfig } from "@/config/site";
-import { DEFAULT_LOCALE, Locale, routing } from "@/i18n/routing";
+import { DEFAULT_LOCALE, LOCALES, Locale, routing } from '@/i18n/routing';
+
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
+}
 import { constructMetadata } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";

@@ -8,7 +8,10 @@
       "Bash(npm install:*)",
       "Bash(corepack enable:*)",
       "Bash(corepack pnpm:*)",
-      "Bash(ls -la app/[locale]/)"
+      "Bash(ls -la app/[locale]/)",
+      "Bash(pnpm build:*)",
+      "Bash(ls:*)",
+      "Bash(taskkill:*)"
     ]
   }
 }

@@ -1,28 +1,22 @@
-import createNextIntlPlugin from "next-intl/plugin";
+import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // 只在生产构建时使用静态导出
+  ...(process.env.NODE_ENV === 'production' && {
+    output: 'export',
+    distDir: 'dist',
+  }),
   images: {
-    unoptimized:
-      process.env.NEXT_PUBLIC_OPTIMIZED_IMAGES &&
-      process.env.NEXT_PUBLIC_OPTIMIZED_IMAGES === "false",
-    remotePatterns: [
-      ...(process.env.R2_PUBLIC_URL
-        ? [
-            {
-              hostname: process.env.R2_PUBLIC_URL.replace("https://", ""),
-            },
-          ]
-        : []),
-    ],
+    unoptimized: true,
   },
   compiler: {
     removeConsole:
-      process.env.NODE_ENV === "production"
+      process.env.NODE_ENV === 'production'
         ? {
-            exclude: ["error"],
+            exclude: ['error'],
           }
         : false,
   },

@@ -1,6 +1,9 @@
 import { siteConfig } from '@/config/site'
 import type { MetadataRoute } from 'next'
 
+// 静态导出模式配置
+export const dynamic = 'force-static'
+
 const siteUrl = siteConfig.url
 
 export default function robots(): MetadataRoute.Robots {

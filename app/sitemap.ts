@@ -1,6 +1,9 @@
 import { siteConfig } from '@/config/site'
 import { MetadataRoute } from 'next'
 
+// 静态导出模式配置
+export const dynamic = 'force-static'
+
 const siteUrl = siteConfig.url
 
 type ChangeFrequency = 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never' | undefined
